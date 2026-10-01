@@ -15,4 +15,5 @@ if [[ $ID != debian ]]; then
   exit 1
 fi
 
+"$script_dir/00-check-wsl.sh"
 exec "$legacy_installer"

@@ -13,7 +13,7 @@ Allocate the Debian VM 2 vCPU, 6 GB RAM, and a 40 GB dynamically expanding disk.
 ## Quick start
 
 1. In an Administrator PowerShell, run `./windows/check-host.ps1`. Read the warning before optionally running `./windows/enable-hyperv.ps1` and rebooting.
-2. Create Debian 12 or 13 on the Hyper-V Default Switch. Full host steps are in [docs/install-windows.md](docs/install-windows.md).
+2. Create Debian 12 or 13 on the Hyper-V Default Switch. Full host steps are in [docs/install-windows.md](docs/install-windows.md). For Debian on WSL 2 instead, first complete [docs/wsl-setup.md](docs/wsl-setup.md).
 3. Copy this `openstack-windows-mvp` directory into the Debian user's home directory. In Debian, run:
 
    ```bash
@@ -39,4 +39,4 @@ Allocate the Debian VM 2 vCPU, 6 GB RAM, and a 40 GB dynamically expanding disk.
 
 Run `./demo/demo-all.sh` during the oral examination. Run `./openstack/99-cleanup.sh` to delete every MVP resource safely; it is idempotent.
 
-See [docs/architecture.md](docs/architecture.md), [docs/api-ui-guide.md](docs/api-ui-guide.md) for API endpoints and Horizon buttons, [docs/viva-script.md](docs/viva-script.md), [docs/viva-questions.md](docs/viva-questions.md), and [docs/troubleshooting.md](docs/troubleshooting.md).
+See [docs/architecture.md](docs/architecture.md), [docs/wsl-setup.md](docs/wsl-setup.md) for WSL 2 setup, [docs/api-ui-guide.md](docs/api-ui-guide.md) for API endpoints and Horizon buttons, [docs/viva-script.md](docs/viva-script.md), [docs/viva-questions.md](docs/viva-questions.md), and [docs/troubleshooting.md](docs/troubleshooting.md).
