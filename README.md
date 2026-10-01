@@ -8,7 +8,7 @@ A smallest-real OpenStack university lab: one Debian Server VM on a Windows host
 
 `Windows 10/11 → Hyper-V Default Switch → Debian Server VM → DevStack → Keystone, Glance, Nova, Neutron, Cinder, Horizon`.
 
-Allocate the Debian VM 4 vCPU, 10 GB RAM, and a 60 GB dynamically expanding disk. The installer requires Debian 12 or 13, at least 8 GB RAM, and 50 GB free disk. Enable nested virtualization for KVM when possible; otherwise it automatically sets Nova/libvirt to QEMU, which is slower but fine for the single CirrOS demo.
+Allocate the Debian VM 2 vCPU, 6 GB RAM, and a 40 GB dynamically expanding disk. The installer requires Debian 12 or 13, at least 5 GB RAM and 40 GB free disk; 6 GB is strongly recommended for a stable demonstration. This low-resource profile uses a 256 MB CirrOS flavor and a 10 GB Cinder backing file. Enable nested virtualization for KVM when possible; otherwise it automatically sets Nova/libvirt to QEMU, which is slower but fine for the single CirrOS demo. A host unable to spare 5 GB for Debian cannot reliably run this real DevStack service set.
 
 ## Quick start
 

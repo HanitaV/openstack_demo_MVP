@@ -21,7 +21,7 @@ Write-Host "OpenStack MVP Windows host check" -ForegroundColor Cyan
     'Free system disk (GB)' = [math]::Round($systemDrive.FreeSpace / 1GB, 1)
 } | Format-List
 
-Write-Host "Recommended for the Ubuntu VM: 4 vCPU, 10 GB RAM, 60 GB dynamic disk, Default Switch." -ForegroundColor Yellow
+Write-Host "Low-resource MVP recommendation: 2 vCPU, 6 GB RAM, 40 GB dynamic disk, Default Switch." -ForegroundColor Yellow
 if ($hyperVFeature.State -ne 'Enabled') {
     Write-Warning 'Hyper-V is not enabled. Run enable-hyperv.ps1 only after saving work; it requires a reboot.'
 }

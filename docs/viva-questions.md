@@ -15,7 +15,7 @@
 13. **Volume là gì?** Một thiết bị block storage gắn độc lập vào VM.
 14. **Root disk khác volume Cinder?** Root disk khởi tạo cùng instance; Cinder volume quản lý độc lập và có thể gắn lại.
 15. **Flavor là gì?** Mẫu tài nguyên VM gồm vCPU, RAM và disk.
-16. **`mvp.nano` có cấu hình gì?** 1 vCPU, 512 MB RAM, 1 GB disk.
+16. **`mvp.nano` có cấu hình gì?** 1 vCPU, 256 MB RAM, 1 GB disk.
 17. **Tại sao dùng CirrOS?** Image rất nhỏ, boot nhanh, phù hợp lab/demo.
 18. **Project là gì?** Vùng tách biệt tài nguyên và quota cho một nhóm người dùng.
 19. **User `mvp-user` thuộc đâu?** Thuộc `mvp-project`, với role `member`.

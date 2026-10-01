@@ -1,15 +1,15 @@
 #!/usr/bin/env bash
 set -Eeuo pipefail
 
-required_ram_gb=8
-required_disk_gb=50
+required_ram_gb=5
+required_disk_gb=40
 source /etc/os-release
 ram_gb=$(( $(awk '/MemTotal/ { print $2 }' /proc/meminfo) / 1024 / 1024 ))
 disk_gb=$(df -BG --output=avail / | tail -1 | tr -dc '0-9')
 
 echo "Debian: ${PRETTY_NAME}"
-echo "RAM available: ${ram_gb} GB (recommended: ${required_ram_gb}+ GB)"
-echo "Disk free: ${disk_gb} GB (recommended: ${required_disk_gb}+ GB)"
+echo "RAM available: ${ram_gb} GB (minimum: ${required_ram_gb} GB; recommended: 6 GB)"
+echo "Disk free: ${disk_gb} GB (minimum: ${required_disk_gb} GB)"
 if [[ -e /dev/kvm ]]; then
   echo 'KVM available: Nova will use hardware virtualization.'
 else

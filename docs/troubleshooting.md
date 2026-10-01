@@ -3,7 +3,7 @@
 | Symptom | Likely cause | Diagnostic command | Shortest fix |
 |---|---|---|---|
 | `stack.sh` fails | dependency, network, or stale DevStack state | `less ~/devstack/stack.sh.log` | Fix the reported first error; run `~/devstack/unstack.sh`, then rerun installer. |
-| Not enough RAM/disk | VM undersized | `free -h; df -h /` | Set VM to 10 GB RAM and expand to 60 GB disk. |
+| Not enough RAM/disk | VM undersized | `free -h; df -h /` | Assign 6 GB RAM and a 40 GB disk; do not go below 5 GB RAM. |
 | KVM unavailable | nested virtualization disabled | `test -e /dev/kvm && echo yes` | Enable nested virtualization, or retain QEMU fallback. |
 | Nova `No valid host` | compute service/resource problem | `openstack compute service list; openstack hypervisor list` | Check `n-cpu` is up; use the small flavor and QEMU if needed. |
 | VM is `ERROR` | build/network/image failure | `openstack server show mvp-vm01; openstack console log show mvp-vm01` | Delete the VM, fix reported service/image issue, rerun `05-create-vm.sh`. |
