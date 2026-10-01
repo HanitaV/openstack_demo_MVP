@@ -10,6 +10,6 @@
 
 **5:00–6:30 — Storage.** Run `openstack volume list` and `openstack volume show mvp-volume01`. Say: “Cinder cung cấp block storage bền vững. Volume này độc lập với root disk của VM và đang ở trạng thái `in-use` vì đã được gắn vào instance.”
 
-**6:30–8:00 — Dashboard.** Show Horizon: Project → Images, Instances, Volumes, Networks. Finish: “Ba chức năng yêu cầu của bài gồm Compute, Imaging và Storage đều đã hoạt động.”
+**6:30–8:00 — Dashboard.** Open Horizon and show Project → Compute → Images, then Instances, Project → Volumes → Volumes, and Project → Network → Networks. Click `mvp-vm01` to show its details or use the **Console** button. The complete button-by-button guide is in `docs/api-ui-guide.md`. Finish: “Ba chức năng yêu cầu của bài gồm Compute, Imaging và Storage đều đã hoạt động.”
 
 For a one-command sequence, run `./demo/demo-all.sh`.

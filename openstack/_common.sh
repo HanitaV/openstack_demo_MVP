@@ -9,8 +9,13 @@ PROJECT_NAME=${PROJECT_NAME:-mvp-project}
 PROJECT_USER=${PROJECT_USER:-mvp-user}
 PROJECT_PASSWORD=${PROJECT_PASSWORD:-openstack}
 
-admin_openrc() { source "$OPENRC" admin admin; }
-user_openrc() { source "$OPENRC" "$PROJECT_USER" "$PROJECT_NAME"; }
+source_openrc() {
+  set +u
+  source "$OPENRC" "$@"
+  set -u
+}
+admin_openrc() { source_openrc admin admin; }
+user_openrc() { source_openrc "$PROJECT_USER" "$PROJECT_NAME"; }
 exists() { "$@" >/dev/null 2>&1; }
 wait_for() {
   local description=$1 command=$2 attempts=${3:-30}

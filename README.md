@@ -39,4 +39,4 @@ Allocate the Debian VM 2 vCPU, 6 GB RAM, and a 40 GB dynamically expanding disk.
 
 Run `./demo/demo-all.sh` during the oral examination. Run `./openstack/99-cleanup.sh` to delete every MVP resource safely; it is idempotent.
 
-See [docs/architecture.md](docs/architecture.md), [docs/viva-script.md](docs/viva-script.md), [docs/viva-questions.md](docs/viva-questions.md), and [docs/troubleshooting.md](docs/troubleshooting.md).
+See [docs/architecture.md](docs/architecture.md), [docs/api-ui-guide.md](docs/api-ui-guide.md) for API endpoints and Horizon buttons, [docs/viva-script.md](docs/viva-script.md), [docs/viva-questions.md](docs/viva-questions.md), and [docs/troubleshooting.md](docs/troubleshooting.md).

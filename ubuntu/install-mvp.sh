@@ -22,7 +22,9 @@ curl --fail --silent --show-error --connect-timeout 10 https://opendev.org/ >/de
 
 echo 'Starting DevStack. This can take 20–45 minutes.'
 "$devstack_dir/stack.sh"
+set +u
 source "$devstack_dir/openrc" admin admin
+set -u
 openstack token issue >/dev/null
 for service in nova glance cinderv3 keystone neutron; do
   openstack endpoint list --service "$service" -f value -c ID | grep -q . || {
