@@ -8,6 +8,7 @@ OPENRC=${OPENRC:-$DEVSTACK_DIR/openrc}
 PROJECT_NAME=${PROJECT_NAME:-mvp-project}
 PROJECT_USER=${PROJECT_USER:-mvp-user}
 PROJECT_PASSWORD=${PROJECT_PASSWORD:-openstack}
+OPENSTACK_COMMAND_TIMEOUT=${OPENSTACK_COMMAND_TIMEOUT:-90}
 
 source_openrc() {
   set +u
@@ -16,7 +17,7 @@ source_openrc() {
 }
 admin_openrc() { source_openrc admin admin; }
 user_openrc() { source_openrc "$PROJECT_USER" "$PROJECT_NAME"; }
-exists() { "$@" >/dev/null 2>&1; }
+exists() { timeout "$OPENSTACK_COMMAND_TIMEOUT" "$@" >/dev/null 2>&1; }
 wait_for() {
   local description=$1 command=$2 attempts=${3:-30}
   for ((attempt=1; attempt<=attempts; attempt++)); do
